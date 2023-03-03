@@ -1,0 +1,36 @@
+// les fonts utilsé
+@font-face {
+  font-family: Lato;
+  src: url("./assets/fonts/Lato-Regular.ttf");
+}
+$lato: Lato;
+
+// les couleurs
+$black: black;
+$black_05: #050505;
+$black_1F: #1f1f1f;
+
+$gray_1: rgba(0, 0, 0, 0.16);
+$gray_2: rgba(112, 112, 112, 1);
+$gray_3: rgba(114, 114, 114, 1);
+$gray_4: rgba(171, 171, 171, 1);
+$gray_5: rgba(241, 241, 241, 1);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  li {
+    list-style-type: none;
+  }
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: black;
+}
