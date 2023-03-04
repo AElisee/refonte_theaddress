@@ -1,0 +1,29 @@
+\* DECOUPAGE PAGE D ACCUEIL
+
+- SECTION HEADER
+
+  - navigation
+  - slider
+  - en savoir plus
+
+    - navigation + slider = 100vh
+
+- SECTION NOUVEAUTES (min & max height : 100vh)
+
+  - contient des cartes de produits
+
+- SECTION TENDANCES (min & max height : 100vh)
+
+  - contient des cartes de produits
+
+- SECTION COLLECTIONS (min & max height : 50vh sur pc et max-content sur mobile)
+
+  - contient des cartes de produits
+
+- SECTION CONTENU EDITORIAL (100vh sur pc max-content sur mobile)
+
+- SECTION NEWSLETTER (301 sur pc)
+
+- SECTION BLOGS (100vh)
+
+- SECTION FOOTER (100vh)

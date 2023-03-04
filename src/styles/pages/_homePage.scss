@@ -1,0 +1,42 @@
+.home-page {
+  min-height: 100vh;
+
+  // LearnMoreAboutUs component style
+  .learn-more-about-us {
+    width: 100%;
+    height: 190px;
+    background-color: $gray_5;
+  }
+
+  // Newness & trend component style
+  .discovery {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+  }
+
+  .discovery#trend {
+    background-color: $gray_5;
+  }
+
+  // Collections component style
+  .collections {
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+  }
+
+  // EditorialContent component style
+  .editorial-content {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+  }
+
+  // NewsLetter component style
+  .newsLetter {
+    width: 100%;
+    height: 190px;
+    background-color: rgba(236, 203, 160, 0.517);
+  }
+}

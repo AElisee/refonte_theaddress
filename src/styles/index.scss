@@ -1,0 +1,14 @@
+//settings
+@import "./settings";
+
+// pages
+@import "./pages//homePage";
+@import "./pages/aboutPage";
+@import "./pages/creatorPage";
+@import "./pages/loginPage";
+@import "./pages/newProductsPage";
+
+// components
+@import "./components/header";
+@import "./components/nav-bar";
+@import "./components/footer";

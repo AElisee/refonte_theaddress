@@ -1,16 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const LoginPage = () => {
+const NotFound = () => {
   return (
     <div>
       <Helmet>
-        <title>THE ADDRESS - authentification</title>
+        <title> ERREUR - page introuvable</title>
         <meta name="description" content="Description de ma page" />
       </Helmet>
-      <h1>LoginPage</h1>
+      <h1>Aïe ! quelque chose s'est mal passé</h1>
+      <p>Nous n'avons pas trouvé la page </p>
     </div>
   );
 };
 
-export default LoginPage;
+export default NotFound;
