@@ -3,11 +3,11 @@
   font-family: Lato;
   src: url("./assets/fonts/Lato-Regular.ttf");
 }
-$lato: Lato;
+$Lato: Lato;
 
 // les couleurs
 $black: black;
-$black_05: #050505;
+$black_05: rgba(0, 0, 0, 0.7);
 $black_1F: #1f1f1f;
 
 $gray_1: rgba(0, 0, 0, 0.16);
@@ -20,6 +20,11 @@ $gray_5: rgba(241, 241, 241, 1);
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: $Lato;
 }
 
 ul {

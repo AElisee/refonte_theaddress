@@ -11,4 +11,8 @@ export const data = [
     name: "slide 3",
     picture: "./images/coffee-gdc43834e2_640.jpg",
   },
+  {
+    name: "slide 3",
+    picture: "./images/against-light-gf4133d6eb_640.jpg",
+  },
 ];

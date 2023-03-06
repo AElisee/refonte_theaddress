@@ -18,9 +18,11 @@ const HeaderSlide = () => {
   };
   return (
     <div className="header-slide">
-      {data.map((pic, index) => (
-        <SlideCard key={index} pic={pic} />
-      ))}
+      <Slider {...settings}>
+        {data.map((pic, index) => (
+          <SlideCard key={index} pic={pic} />
+        ))}
+      </Slider>
     </div>
   );
 };
