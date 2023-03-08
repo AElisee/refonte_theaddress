@@ -1,18 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-//import default data
 import { data } from "../defaultData/data";
-import ItemCard from "./ItemCard";
+import BlogCard from "./BlogCard";
 
-const Discovery = ({ title, id }) => {
+const Blog = () => {
   return (
-    <div className="discovery" id={id}>
+    <div className="blog">
       <div className="container">
         <div className="top">
           <div className="left">
-            <h4>découvrez les</h4>
-            <h3>{title}</h3>
+            <h3>Les derniers blogs</h3>
           </div>
           <div className="right">
             <Link to="" id="all">
@@ -25,8 +22,8 @@ const Discovery = ({ title, id }) => {
           </div>
         </div>
         <ul className="card-container">
-          {data.map((el) => (
-            <ItemCard el={el} />
+          {data.slice(0, 3).map((el) => (
+            <BlogCard />
           ))}
         </ul>
       </div>
@@ -34,4 +31,4 @@ const Discovery = ({ title, id }) => {
   );
 };
 
-export default Discovery;
+export default Blog;

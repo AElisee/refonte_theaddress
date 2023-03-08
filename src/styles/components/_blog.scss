@@ -1,0 +1,113 @@
+.blog {
+  height: max-content;
+  min-height: 600px;
+  padding: 50px 0;
+
+  @media screen and (max-width: 1199px) {
+    @include p-l-r-10;
+  }
+  .container {
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 35px;
+
+      .left {
+        h3 {
+          text-transform: uppercase;
+          font-size: 1.4rem;
+        }
+      }
+
+      .right {
+        text-transform: lowercase;
+
+        #all {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .card-container {
+      @include flex-center;
+      flex-wrap: wrap;
+
+      .blog-card {
+        position: relative;
+        flex: 1 0 25%;
+        width: 320px;
+        min-width: 300px;
+        max-width: 320px;
+        height: 300px;
+
+        @media screen and (max-width: 768px) {
+          max-width: 100vw;
+          margin-bottom: 70px;
+        }
+        @media screen and (max-width: 947px) {
+          max-width: 350px;
+          margin-bottom: 70px;
+        }
+
+        a:nth-child(1) {
+          @include w-h-full;
+          display: block;
+        }
+
+        .img-container {
+          @include w-h-full;
+          overflow: hidden;
+
+          img {
+            @include w-h-full;
+            object-fit: cover;
+          }
+        }
+        .infos {
+          position: absolute;
+          width: 280px;
+          max-height: 170px;
+          padding: 30px 20px;
+          background-color: white;
+          margin: 0 auto;
+          left: 50%;
+          bottom: -50%;
+          transform: translate(-50%, -50%);
+          white-space: wrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          .title {
+            margin-bottom: 20px;
+          }
+
+          .content {
+            color: $gray_2;
+            font-weight: 600;
+            font-family: $Lato;
+            font-size: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* nombre de lignes souhaité */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .blog-card:not(:last-child) {
+        margin-right: 15px;
+
+        @media screen and (max-width: 651px) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

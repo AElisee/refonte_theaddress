@@ -27,3 +27,94 @@
 - SECTION BLOGS (100vh)
 
 - SECTION FOOTER (100vh)
+
+////////////////////////
+**\*** Logique de recherche :
+-Créez un état dans le composant parent Home pour stocker les termes de recherche entrés dans la barre de recherche. Vous pouvez utiliser la méthode useState pour cela.
+
+-Passez la fonction de mise à jour de l'état de Home en tant que prop à Navbar, afin que Navbar puisse mettre à jour l'état de Home avec les termes de recherche.
+
+-Dans Home, ajoutez une condition qui vérifie si des termes de recherche ont été saisis. Si oui, affichez le composant Shop. Si non, affichez le composant Navbar et le reste du contenu de Home.
+
+-Dans Shop, créez un état pour stocker les résultats de recherche et utilisez une API pour effectuer une recherche avec les termes entrés.
+
+Affichez les résultats de recherche dans Shop.
+
+-Lorsque l'utilisateur efface la barre de recherche, vous pouvez réinitialiser l'état de recherche dans Home et revenir à l'affichage initial.
+
+////COMPOSANT HOME
+
+import React, { useState } from "react";
+import Navbar from "./Navbar";
+import Shop from "./Shop";
+
+function Home() {
+const [searchTerm, setSearchTerm] = useState("");
+const [showShop, setShowShop] = useState(false);
+
+const handleSearch = (term) => {
+setSearchTerm(term);
+setShowShop(true);
+};
+
+return (
+
+<div>
+{showShop ? (
+<Shop searchTerm={searchTerm} />
+) : (
+<Navbar onSearch={handleSearch} />
+)}
+{/_ Rest of the Home component _/}
+</div>
+);
+}
+
+export default Home;
+
+//**\*** \*/
+
+////COMPOSANT NAVBAR
+
+import React, { useState } from "react";
+
+function Navbar({ onSearch }) {
+const [searchTerm, setSearchTerm] = useState("");
+
+const handleChange = (event) => {
+setSearchTerm(event.target.value);
+onSearch(event.target.value);
+};
+
+return (
+
+<div>
+<input type="text" value={searchTerm} onChange={handleChange} />
+{/_ Other Navbar components _/}
+</div>
+);
+}
+
+export default Navbar;
+
+///\*_\*\* _/
+/////COMPOSANT SHOP
+
+import React, { useState, useEffect } from "react";
+
+function Shop({ searchTerm }) {
+const [searchResults, setSearchResults] = useState([]);
+
+useEffect(() => {
+// Call API to get search results with searchTerm
+// Update searchResults state with results
+}, [searchTerm]);
+
+return (
+<div>
+{/_ Display search results _/}
+</div>
+);
+}
+
+export default Shop;

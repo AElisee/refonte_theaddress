@@ -39,3 +39,27 @@ a:visited {
   text-decoration: none;
   color: black;
 }
+
+// mixins
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid-center {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin p-l-r-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@mixin w-h-full {
+  width: 100%;
+  height: 100%;
+}

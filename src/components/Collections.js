@@ -5,7 +5,7 @@ const Collections = () => {
   return (
     <div className="collections">
       <ul className="container">
-        <li className="item">
+        <li className="item item-1">
           <div className="item-container">
             <h4>découvrez les</h4>
             <h3>collections</h3>
@@ -18,7 +18,7 @@ const Collections = () => {
             </Link>
           </div>
         </li>
-        <li className="item">
+        <li className="item item-2">
           <div className="img-container">
             <img src="./images/against-light-gf4133d6eb_640.jpg" alt="" />
           </div>
@@ -28,7 +28,7 @@ const Collections = () => {
             </Link>
           </div>
         </li>
-        <li className="item">
+        <li className="item item-3">
           <div className="img-container">
             <img src="./images/coffee-gdc43834e2_640.jpg" alt="" />
           </div>

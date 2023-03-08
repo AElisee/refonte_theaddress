@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import LearnMoreAboutUs from "../components/LearnMoreAboutUs";
 import Discovery from "../components/Discovery";
@@ -18,9 +18,9 @@ import Slider from "react-slick";
 import { data } from "../defaultData/data";
 import PrevArrow from "../components/PrevArrow";
 import NextArrow from "../components/NextArrow";
+import Blog from "../components/Blog";
 
 const HomePage = () => {
-  const [blog, setBlog] = useState(true);
   const settings = {
     className: "slider",
     dots: true,
@@ -66,7 +66,7 @@ const HomePage = () => {
       <Collections />
       <EditorialContent />
       <NewsLetter />
-      <Discovery title="LES DERNIERS BLOGS" isblog={blog} />
+      <Blog />
       <Footer />
     </div>
   );
