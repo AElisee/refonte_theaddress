@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import LearnMoreAboutUs from "../components/LearnMoreAboutUs";
-import Discovery from "../components/Discovery";
+import Discovery from "../components/Trends";
 import Collections from "../components/Collections";
 import EditorialContent from "../components/EditorialContent";
 import NewsLetter from "../components/NewsLetter";
@@ -19,6 +19,7 @@ import { data } from "../defaultData/data";
 import PrevArrow from "../components/PrevArrow";
 import NextArrow from "../components/NextArrow";
 import Blog from "../components/Blog";
+import Newness from "../components/Newness";
 
 const HomePage = () => {
   const settings = {
@@ -61,7 +62,7 @@ const HomePage = () => {
         </div>
       </div>
       <LearnMoreAboutUs />
-      <Discovery title="Nouveautés" id="newness" />
+      <Newness />
       <Discovery title="Tendances" id="trend" />
       <Collections />
       <EditorialContent />

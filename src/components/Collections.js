@@ -9,7 +9,7 @@ const Collections = () => {
           <div className="item-container">
             <h4>découvrez les</h4>
             <h3>collections</h3>
-            <Link to="/" id="to-collections">
+            <Link to="/boutique" id="to-collections">
               <span>tous les produits</span>
               <img
                 src="/icons/arrow-narrow-right.svg"
@@ -23,7 +23,7 @@ const Collections = () => {
             <img src="./images/against-light-gf4133d6eb_640.jpg" alt="" />
           </div>
           <div className="btn-container">
-            <Link to="" id="link">
+            <Link to="/boutique/homme" id="link">
               Homme
             </Link>
           </div>
@@ -33,7 +33,7 @@ const Collections = () => {
             <img src="./images/coffee-gdc43834e2_640.jpg" alt="" />
           </div>
           <div className="btn-container">
-            <Link to="" id="link">
+            <Link to="/boutique/femme" id="link">
               femme
             </Link>
           </div>

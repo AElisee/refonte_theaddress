@@ -408,6 +408,10 @@
         grid-template-rows: 15% 72% 13%;
         text-align: center;
 
+        @media screen and (max-width: 992px) {
+          height: max-content;
+        }
+
         .title {
           width: 80%;
           margin: 0 auto;

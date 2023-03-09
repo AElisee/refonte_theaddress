@@ -12,7 +12,7 @@ const NewsLetter = () => {
           </p>
           <input type="email" placeholder="Entrez votre email" />
           <div id="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" id="condition" />
             <label htmlFor="condition">
               J'ai lu et j'accepte les CGV et CGU{" "}
               <Link to="" id="to-condition">

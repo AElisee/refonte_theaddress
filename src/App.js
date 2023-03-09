@@ -4,9 +4,12 @@ import AboutPage from "./pages/AboutPage";
 import CreatorPage from "./pages/CreatorPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import NewProductsPage from "./pages/NewProductsPage";
 import { Helmet } from "react-helmet";
 import NotFound from "./pages/NotFound";
+import ProductsPage from "./pages/ProductsPage";
+import TrendsPage from "./pages/TrendsPage";
+import ManProductsPage from "./pages/ManProductsPage";
+import WomanProductsPage from "./pages/WomanProductsPage";
 
 const App = () => {
   return (
@@ -18,7 +21,10 @@ const App = () => {
         <Route exact path="/" element={<HomePage />} />
         <Route path="/a-propos" element={<AboutPage />} />
         <Route path="/authentification" element={<LoginPage />} />
-        <Route path="/nouvautes" element={<NewProductsPage />} />
+        <Route path="/boutique" element={<ProductsPage />} />
+        <Route path="/boutique/homme" element={<ManProductsPage />} />
+        <Route path="/boutique/femme" element={<WomanProductsPage />} />
+        <Route path="/tendances" element={<TrendsPage />} />
         <Route path="/createurs" element={<CreatorPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

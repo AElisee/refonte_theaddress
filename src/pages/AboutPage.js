@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import NavBar from "../components/Navigation/NavBar";
 
 const AboutPage = () => {
   return (
@@ -8,6 +9,7 @@ const AboutPage = () => {
         <title> THE ADDRESS - A propos</title>
         <meta name="description" content="Description de ma page" />
       </Helmet>
+      <NavBar />
       <h1>AboutPage</h1>
     </div>
   );
