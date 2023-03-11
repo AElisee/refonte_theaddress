@@ -1,8 +1,8 @@
 import React from "react";
 
-const Card = ({ el }) => {
+const ProductCard = ({ el }) => {
   return (
-    <li className="card">
+    <li className="product-card">
       <div className="img-container">
         <img src={el.picture} alt="" />
       </div>
@@ -16,4 +16,4 @@ const Card = ({ el }) => {
   );
 };
 
-export default Card;
+export default ProductCard;

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Blog from "../components/Blog";
 import Footer from "../components/Footer";
 import NavBar from "../components/Navigation/NavBar";
@@ -10,6 +11,11 @@ const ManProductsPage = () => {
   }, []);
   return (
     <div className="man-shop">
+      {/* titre dans l'onglet */}
+      <Helmet>
+        <title> THE ADDRESS - Hommes</title>
+        <meta name="description" content="Description de ma page" />
+      </Helmet>
       <NavBar />
       <ProductsContainer />
       <Blog />

@@ -2,6 +2,10 @@ import React from "react";
 import SideFilter from "./SideFilter";
 import TopFilter from "./TopFilter";
 
+//default data
+import { data } from "../defaultData/data";
+import ProductCard from "./ProductCard";
+
 const ProductsContainer = () => {
   return (
     <div className="products-container">
@@ -16,9 +20,9 @@ const ProductsContainer = () => {
           </div>
           <div className="product-dispalying">
             <ul className="card-container">
-              <li>card</li>
-              <li>card</li>
-              <li>card</li>
+              {data.map((el) => (
+                <ProductCard el={el} />
+              ))}
             </ul>
           </div>
         </div>

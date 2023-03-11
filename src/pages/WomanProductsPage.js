@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Blog from "../components/Blog";
 import Footer from "../components/Footer";
 import NavBar from "../components/Navigation/NavBar";
@@ -10,6 +11,11 @@ const WomanProductsPage = () => {
   }, []);
   return (
     <div className="woman-shop">
+      {/* titre dans l'onglet */}
+      <Helmet>
+        <title> THE ADDRESS - Femmes</title>
+        <meta name="description" content="Description de ma page" />
+      </Helmet>
       <NavBar />
       <ProductsContainer />
       <h1>femme</h1>

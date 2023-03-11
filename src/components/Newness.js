@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 //import default data
 import { data } from "../defaultData/data";
-import ItemCard from "./ItemCard";
+import ProductCard from "./ProductCard";
 
 const Newness = () => {
   return (
@@ -26,7 +26,7 @@ const Newness = () => {
         </div>
         <ul className="card-container">
           {data.map((el) => (
-            <ItemCard el={el} />
+            <ProductCard el={el} />
           ))}
         </ul>
       </div>

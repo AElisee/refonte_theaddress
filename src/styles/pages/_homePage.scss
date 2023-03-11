@@ -157,57 +157,6 @@
           }
         }
       }
-
-      .card-container {
-        @include flex-center;
-        flex-wrap: wrap;
-
-        .card {
-          flex: 1 0 20%;
-          min-width: 260px;
-          width: 260px;
-          max-width: 260px;
-          height: 100%;
-          overflow: hidden;
-          margin-bottom: 20px;
-
-          .img-container {
-            width: 320px;
-            height: 410px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-
-            img {
-              object-fit: cover;
-            }
-          }
-
-          .infos {
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-
-            p {
-              margin-top: 5px;
-
-              &:nth-child(1),
-              &:nth-child(3) {
-                font-size: 0.9rem;
-              }
-              &:nth-child(2),
-              &:nth-child(4) {
-                font-size: 0.7rem;
-                font-weight: 600;
-              }
-            }
-          }
-        }
-        .card:not(:last-child) {
-          margin-right: 15px;
-        }
-      }
     }
   }
 
@@ -478,28 +427,27 @@
           color: white;
         }
 
-        input[type="email"] {
-          width: 300px;
-          max-height: 40px;
-          padding: 10px 25px;
+        input[type="email"],
+        input[type="submit"] {
           border: none;
           outline: none;
           font-family: $Lato;
-          font-size: 0.9rem;
+          padding: 10px 20px;
           margin: 0 20px;
         }
+
+        input[type="email"] {
+          width: 300px;
+          max-height: 40px;
+          font-size: 0.9rem;
+        }
+
         input[type="submit"] {
           max-height: 40px;
           background: black;
           color: white;
           text-transform: uppercase;
-          font-family: $Lato;
           font-weight: 600;
-          padding: 10px 20px;
-          border: none;
-          outline: none;
-          font-family: $Lato;
-          margin: 0 20px;
           cursor: pointer;
         }
 

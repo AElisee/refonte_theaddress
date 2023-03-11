@@ -10,6 +10,7 @@ import ProductsPage from "./pages/ProductsPage";
 import TrendsPage from "./pages/TrendsPage";
 import ManProductsPage from "./pages/ManProductsPage";
 import WomanProductsPage from "./pages/WomanProductsPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/a-propos" element={<AboutPage />} />
         <Route path="/authentification" element={<LoginPage />} />
         <Route path="/boutique" element={<ProductsPage />} />
+        <Route path="/details-produit" element={<ProductDetailsPage />} />
         <Route path="/boutique/homme" element={<ManProductsPage />} />
         <Route path="/boutique/femme" element={<WomanProductsPage />} />
         <Route path="/tendances" element={<TrendsPage />} />

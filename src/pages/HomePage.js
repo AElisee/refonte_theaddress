@@ -46,15 +46,13 @@ const HomePage = () => {
         <NavBar />
         <div className="slide-container">
           <Slider {...settings}>
-            {data.map((el) => {
+            {data.map((el, index) => {
               return (
-                <div>
-                  <div className="img-container">
-                    <img src={el.picture} alt="" />
-                    <h2>
-                      Faites vous plaisir en <br /> décontracté
-                    </h2>
-                  </div>
+                <div key={index} className="img-container">
+                  <img src={el.picture} alt="" />
+                  <h2>
+                    Faites vous plaisir en <br /> décontracté
+                  </h2>
                 </div>
               );
             })}

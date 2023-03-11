@@ -1,0 +1,51 @@
+.card-container {
+  @include flex-center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .product-card {
+    flex: 1 0 20%;
+    display: grid;
+    min-width: 280px;
+    width: 280px;
+    max-width: 280px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    .img-container {
+      width: 260px;
+      max-height: 350px;
+      @include flex-center;
+      margin-bottom: 20px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .infos {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+
+      p {
+        margin-top: 5px;
+
+        &:nth-child(1),
+        &:nth-child(3) {
+          font-size: 0.9rem;
+        }
+        &:nth-child(2),
+        &:nth-child(4) {
+          font-size: 0.7rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .product-card:not(:last-child) {
+    margin-right: 15px;
+  }
+}
