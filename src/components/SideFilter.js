@@ -14,6 +14,15 @@ const SideFilter = () => {
 
   // données qui doivent venir de la base de données
   const sizes = ["xs", "s", "m", "l", "xxl", "xxxl"];
+  const colors = [
+    "blue",
+    "orange",
+    "black",
+    "white",
+    "indigo",
+    "violet",
+    "green",
+  ];
   //----
 
   // la fonction pour le menu deroulant des filtres
@@ -107,9 +116,16 @@ const SideFilter = () => {
           <DropdownToggle index={4} />
         </div>
         {!dropdownStates[4] ? (
-          <div className="color-container">
-            <p>couleur</p>
-          </div>
+          <ul className="color-container">
+            {colors.map((color, index) => (
+              <li key={index} className="color">
+                <input type="radio" name="color" id={color} />
+                <label htmlFor={color}>
+                  <span style={{ backgroundColor: `${color}` }}></span>
+                </label>
+              </li>
+            ))}
+          </ul>
         ) : null}
       </div>
     </div>

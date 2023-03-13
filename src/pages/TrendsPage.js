@@ -10,9 +10,9 @@ const TrendsPage = () => {
   }, []);
   return (
     <div className="trends-page">
-      <ProductsContainer />
       <NavBar />
       <h1>tendances</h1>
+      <ProductsContainer />
       <Blog />
       <Footer />
     </div>
