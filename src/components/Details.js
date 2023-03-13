@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import QuantitySelector from "./QuantitySelector";
 
 const Details = () => {
   const [mainImage, setMainImage] = useState("");
@@ -85,16 +86,7 @@ const Details = () => {
                 ))}
               </ul>
             </div>
-            <div className="qty-btn-like">
-              <p>quantité :</p>
-              <div>
-                <input type="number" min={1} defaultValue="1" />
-                <input type="submit" value="AJOUTER AU PANIER" />
-                <div>
-                  <img src="/icons/heart.svg" alt="" />
-                </div>
-              </div>
-            </div>
+            <QuantitySelector />
           </div>
           <div>
             <p>
