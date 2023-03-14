@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import LearnMoreAboutUs from "../components/LearnMoreAboutUs";
-import Discovery from "../components/Trends";
+import Trends from "../components/Trends";
 import Collections from "../components/Collections";
 import EditorialContent from "../components/EditorialContent";
 import NewsLetter from "../components/NewsLetter";
@@ -61,7 +61,7 @@ const HomePage = () => {
       </div>
       <LearnMoreAboutUs />
       <Newness />
-      <Discovery title="Tendances" id="trend" />
+      <Trends />
       <Collections />
       <EditorialContent />
       <NewsLetter />

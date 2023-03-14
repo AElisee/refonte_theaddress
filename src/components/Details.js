@@ -60,7 +60,7 @@ const Details = () => {
               </p>
             </div>
             <div className="color-container">
-              <p>color :</p>
+              <p>Color :</p>
               <ul className="color-list">
                 {colors.map((color, index) => (
                   <li key={index} className="color">
@@ -74,7 +74,7 @@ const Details = () => {
             </div>
             <div className="size-container">
               <div>
-                <p>taille :</p>
+                <p>Taille :</p>
                 <span>voir les tailles</span>
               </div>
               <ul className="size-list">

@@ -12,7 +12,7 @@ const QuantitySelector = () => {
   };
   return (
     <div className="qty-btn-like-container">
-      <p>quantité :</p>
+      <p>Quantité :</p>
       <div id="qty-btn-like">
         <div className="quantity-selector">
           <span>

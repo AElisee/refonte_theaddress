@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 //import default data
 import { data } from "../defaultData/data";
 import ProductCard from "./ProductCard";
+import SeeAllLink from "./SeeAllLink";
 
 const Trends = () => {
   return (
@@ -15,17 +15,11 @@ const Trends = () => {
             <h3>Tendances</h3>
           </div>
           <div className="right">
-            <Link to="/tendances" id="all">
-              <span>Voir tout</span>
-              <img
-                src="/icons/arrow-narrow-right.svg"
-                alt="arrow-narrow-right"
-              />
-            </Link>
+            <SeeAllLink />
           </div>
         </div>
         <ul className="card-container">
-          {data.map((el) => (
+          {data.slice(0, 4).map((el) => (
             <ProductCard el={el} />
           ))}
         </ul>

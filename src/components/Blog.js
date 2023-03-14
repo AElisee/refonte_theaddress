@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { data } from "../defaultData/data";
 import BlogCard from "./BlogCard";
+import SeeAllLink from "./SeeAllLink";
 
 const Blog = () => {
   return (
@@ -12,13 +13,7 @@ const Blog = () => {
             <h3>Les derniers blogs</h3>
           </div>
           <div className="right">
-            <Link to="" id="all">
-              <span>Voir tout</span>
-              <img
-                src="/icons/arrow-narrow-right.svg"
-                alt="arrow-narrow-right"
-              />
-            </Link>
+            <SeeAllLink />
           </div>
         </div>
         <ul className="card-container">
