@@ -3,14 +3,10 @@ import ProductCard from "./ProductCard";
 import SeeAllLink from "./SeeAllLink";
 
 //données par defaut
-import { data } from "../defaultData/data";
+import { useSelector } from "react-redux";
 
 const SimilarProducts = () => {
-  const ulSlide = useRef(null);
-
-  useEffect(() => {
-    console.log(ulSlide.current);
-  }, []);
+  const APIData = useSelector((state) => state.pictures);
 
   // lorque lorsqu'on clic sur les bouttons
   const scrollLeft = () => {
@@ -35,9 +31,7 @@ const SimilarProducts = () => {
         </div>
         <div className="cards-btn">
           <ul className="card-container">
-            {data.map((el) => (
-              <ProductCard el={el} />
-            ))}
+            {APIData && APIData.map((pic) => <ProductCard pic={pic} />)}
           </ul>
           <div className="scroll-btn">
             <span id="left-btn" onClick={scrollLeft}>

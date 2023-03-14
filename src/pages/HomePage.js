@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import LearnMoreAboutUs from "../components/LearnMoreAboutUs";
 import Trends from "../components/Trends";
@@ -15,11 +15,13 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 //import default data
-import { data } from "../defaultData/data";
 import PrevArrow from "../components/PrevArrow";
 import NextArrow from "../components/NextArrow";
 import Blog from "../components/Blog";
 import Newness from "../components/Newness";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { getPictures } from "../feacture/PicturesSlice";
 
 const HomePage = () => {
   const settings = {
@@ -36,6 +38,18 @@ const HomePage = () => {
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
+  const dispatch = useDispatch();
+  const APIData = useSelector((state) => state.pictures);
+  const getData = () => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/albums/1/photos")
+      .then((res) => dispatch(getPictures(res.data)));
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
+  console.log(APIData);
   return (
     <div className="home-page">
       <Helmet>
@@ -46,16 +60,15 @@ const HomePage = () => {
         <NavBar />
         <div className="slide-container">
           <Slider {...settings}>
-            {data.map((el, index) => {
-              return (
-                <div key={index} className="img-container">
-                  <img src={el.picture} alt="" />
-                  <h2>
-                    Faites vous plaisir en <br /> décontracté
-                  </h2>
-                </div>
-              );
-            })}
+            {APIData &&
+              APIData.slice(0, 4).map((pic) => {
+                return (
+                  <div key={pic.id} className="img-container">
+                    <img src={pic.url} alt="" />
+                    <h2>{pic.title}</h2>
+                  </div>
+                );
+              })}
           </Slider>
         </div>
       </div>

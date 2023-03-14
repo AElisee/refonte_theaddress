@@ -1,11 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import ProductCard from "./ProductCard";
 
 //import default data
-import { data } from "../defaultData/data";
-import ProductCard from "./ProductCard";
 import SeeAllLink from "./SeeAllLink";
 
 const Trends = () => {
+  const APIData = useSelector((state) => state.pictures);
   return (
     <div className="discovery">
       <div className="container">
@@ -19,9 +20,8 @@ const Trends = () => {
           </div>
         </div>
         <ul className="card-container">
-          {data.slice(0, 4).map((el) => (
-            <ProductCard el={el} />
-          ))}
+          {APIData &&
+            APIData.slice(4, 8).map((pic) => <ProductCard pic={pic} />)}
         </ul>
       </div>
     </div>

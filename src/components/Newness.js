@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 //import default data
@@ -7,6 +8,7 @@ import ProductCard from "./ProductCard";
 import SeeAllLink from "./SeeAllLink";
 
 const Newness = () => {
+  const APIData = useSelector((state) => state.pictures);
   return (
     <div className="discovery">
       <div className="container">
@@ -20,9 +22,8 @@ const Newness = () => {
           </div>
         </div>
         <ul className="card-container">
-          {data.slice(0, 4).map((el) => (
-            <ProductCard el={el} />
-          ))}
+          {APIData &&
+            APIData.slice(0, 4).map((pic) => <ProductCard pic={pic} />)}
         </ul>
       </div>
     </div>

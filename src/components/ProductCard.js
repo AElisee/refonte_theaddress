@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ el }) => {
+const ProductCard = ({ pic }) => {
   return (
     <li className="product-card">
-      <Link to={`/${el.id}`}>
+      <Link to={`/${pic.id}`}>
         <div className="img-container">
-          <img src={el.picture} alt="" />
+          <img src={pic.url} alt="" />
         </div>
         <div className="infos">
           <p>ACLER</p>
