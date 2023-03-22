@@ -1,0 +1,80 @@
+.similar {
+  background-color: $color-f1f1f1;
+
+  .container-lg {
+    .header {
+      padding: 30px 0;
+
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+    .cards-btn {
+      position: relative;
+      .card-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        overflow: scroll;
+        scroll-behavior: smooth;
+
+        .card {
+          min-width: 240px;
+          width: 140px;
+          margin: 0 20px;
+        }
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .scroll-btn {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transform: translateY(-50%);
+
+        span {
+          cursor: pointer;
+          padding: 5px;
+          img {
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+
+        #left-btn {
+          transform: translateX(-40px);
+        }
+
+        #right-btn {
+          transform: translateX(40px);
+        }
+      }
+
+      @media screen and (min-width: 769px) and (max-width: 992px) {
+        width: 85%;
+        margin: 0 auto;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1200px) {
+        width: 85%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  #like,
+  #dislike {
+    display: none;
+  }
+}

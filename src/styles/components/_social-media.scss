@@ -1,0 +1,17 @@
+.social-media {
+  h4 {
+    margin: 30px 0 20px 0;
+    font-size: 0.9rem;
+  }
+  .social-media-icons {
+    display: flex;
+
+    a {
+      padding-right: 10px;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

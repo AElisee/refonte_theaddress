@@ -1,0 +1,10 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  background: url("./../../../public/images/about-1.jpg") center/cover;
+
+  .navbar {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}
