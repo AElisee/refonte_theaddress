@@ -7,7 +7,7 @@ const FeaturedCard = ({ pic }) => {
     <div className="card">
       <Link to={`/produits/${encodeTitle}/${pic.id}`}>
         <div className="img-container">
-          <img src={pic.image} alt="" />
+          <img src={pic.images[0]} alt="" />
         </div>
         <div className="infos">
           <p>ACLER</p>

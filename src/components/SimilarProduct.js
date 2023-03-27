@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 
 const SimilarProducts = ({ thisPic }) => {
   const pictures = useSelector((state) => state.pictures);
-  console.log("thisPic : " + thisPic);
 
   // lorque lorsqu'on clic sur les bouttons
   const scrollLeft = () => {
