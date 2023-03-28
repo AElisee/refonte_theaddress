@@ -6,14 +6,12 @@ import Edito from "../components/Edito";
 import FeaturedProduct from "../components/feature/FeaturedProduct";
 import MoreAboutUs from "../components/MoreAboutUs";
 import NewsLetter from "../components/NewsLetter";
-import BlogComponent from "./../components/Blog/BlogComponent";
 import SliderComponent from "../components/slider/SliderComponent";
 import {
   fetchAsyncProducts,
   getAllProducts,
   getAllProductsStatus,
-  getPictures,
-} from "../redux/feature/PicturesSlice";
+} from "../redux/feature/productSlice";
 import { STATUS } from "../utils/status";
 import Loader from "../components/Loader";
 
@@ -21,11 +19,14 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAsyncProducts(50));
+    dispatch(fetchAsyncProducts(15));
   }, []);
 
   const products = useSelector(getAllProducts);
   const productStatus = useSelector(getAllProductsStatus);
+
+  const newness = products.slice(0, 4);
+  const trends = products.slice(10, 14);
 
   return (
     <div className="home-page">
@@ -34,14 +35,13 @@ const Home = () => {
       {productStatus === STATUS.LOADING ? (
         <Loader />
       ) : (
-        <FeaturedProduct section="nouvautés" />
+        <FeaturedProduct section="nouvautés" products={newness} />
       )}
-      {/* 
-      <FeaturedProduct section="tendances" /> */}
+
+      <FeaturedProduct section="tendances" products={trends} />
       <CollectionComponent />
       <Edito />
       <NewsLetter />
-      <BlogComponent />
     </div>
   );
 };

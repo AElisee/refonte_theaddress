@@ -1,18 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PriceInFca } from "../../utils/functions";
 
-const FeaturedCard = ({ pic }) => {
-  const encodeTitle = encodeURIComponent(pic.title.replace(/ /g, "-"));
+const FeaturedCard = ({ prod }) => {
+  const encodeTitle = encodeURIComponent(prod.title.replace(/ /g, "-"));
   return (
     <div className="card">
-      <Link to={`/produits/${encodeTitle}/${pic.id}`}>
+      <Link to={`/produits/${encodeTitle}/${prod.id}`}>
         <div className="img-container">
-          <img src={pic.images[0]} alt="" />
+          <img src={prod.images[0]} alt="" />
         </div>
         <div className="infos">
           <p>ACLER</p>
           <p>TOP DONNELLEY</p>
-          <p>{pic.price} €</p>
+          <p>{PriceInFca(prod.price).toLocaleString()} Fcfa</p>
           <p>4-6-8/AU/US</p>
         </div>
       </Link>

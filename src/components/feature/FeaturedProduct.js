@@ -3,16 +3,15 @@ import { useSelector } from "react-redux";
 import {
   getAllProducts,
   getAllProductsStatus,
-} from "../../redux/feature/PicturesSlice";
+} from "../../redux/feature/productSlice";
 import { STATUS } from "../../utils/status";
 import Loader from "../Loader";
 import FeaturedCard from "./FeaturedCard";
 
-const FeaturedProduct = ({ section }) => {
-  const products = useSelector(getAllProducts);
+const FeaturedProduct = ({ section, products }) => {
+  // const products = useSelector(getAllProducts);
   const productStatus = useSelector(getAllProductsStatus);
 
-  console.log(products);
   return (
     <section className="featured-product">
       <div className="container-lg">
@@ -27,9 +26,7 @@ const FeaturedProduct = ({ section }) => {
             <Loader />
           ) : (
             products &&
-            products
-              .slice(0, 4)
-              .map((pic) => <FeaturedCard key={pic.id} pic={pic} />)
+            products.map((prod) => <FeaturedCard key={prod.id} prod={prod} />)
           )}
         </ul>
       </div>
