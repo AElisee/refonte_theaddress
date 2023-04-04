@@ -1,0 +1,46 @@
+.navbar {
+  padding: 15px 0;
+  text-transform: uppercase;
+
+  .navbar-links {
+    .left {
+      li {
+        a {
+          padding: 5px 20px;
+          font-size: 1.6rem;
+          font-weight: 600;
+        }
+
+        a.nav-active {
+          position: relative;
+          &::before {
+            width: 60%;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 3px;
+            background-color: $black-light;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+    .right {
+      font-size: 1.6rem;
+      font-weight: 600;
+      gap: 15px;
+      select {
+        border: none;
+        outline: none;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      .icon {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+}

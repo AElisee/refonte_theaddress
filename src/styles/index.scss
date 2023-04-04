@@ -1,0 +1,14 @@
+@import "./settings.scss";
+
+// pages
+@import "./../pages/home/home.scss";
+@import "./../pages/About/about.scss";
+@import "./../pages/genderPage/gender.scss";
+
+// components
+@import "./../components/navbar/navbar.scss";
+@import "./../components/media/social-media.scss";
+@import "./../components/newsletter/newsletter.scss";
+@import "./../components/logo/logo.scss";
+@import "./../components/blog/blog.scss";
+@import "./../components/footer/footer.scss";

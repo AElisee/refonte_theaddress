@@ -1,0 +1,5 @@
+// Les classes globales
+
+** .img-cover : taille à 100% et cover
+
+- 

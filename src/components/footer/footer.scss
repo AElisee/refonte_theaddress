@@ -1,0 +1,176 @@
+.footer {
+  width: 100%;
+  height: max-content;
+  position: relative;
+
+  .container {
+    .top-section {
+      width: 100%;
+      height: 118px;
+      // background-color: $color-f1f1f1;
+
+      @media screen and (max-width: 768px) {
+        height: max-content;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .top-section-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: 992px) {
+          padding: 0 10px;
+        }
+        @media screen and (max-width: 768px) {
+          padding: 0 10px;
+          display: grid;
+        }
+
+        .top-section-item {
+          width: 100%;
+          display: grid;
+          justify-content: center;
+          align-items: center;
+          grid-template-rows: 1fr 1fr;
+          text-align: center;
+
+          @media screen and (max-width: 768px) {
+            padding: 20px 0;
+          }
+
+          .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          p {
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+        }
+
+        .top-section-item:nth-child(2) {
+          border-right: 1px solid gray;
+          border-left: 1px solid gray;
+
+          @media screen and (max-width: 768px) {
+            border: none;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+          }
+        }
+      }
+    }
+
+    .bottom-section {
+      height: max-content;
+      padding: 70px 0 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 33%);
+      justify-content: space-between;
+
+      @media screen and (max-width: 768px) {
+        padding: 20px 10px;
+        display: grid;
+      }
+      @media screen and (max-width: 1200px) {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      ul {
+        margin-bottom: 40px;
+        h3 {
+          margin-bottom: 30px;
+          font-size: 2rem;
+        }
+
+        > li {
+          padding: 7px 0;
+          // color: $color-050505-79;
+
+          a {
+            font-size: 1.6rem;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+          }
+        }
+        .payment-card-container {
+          margin-top: 30px;
+          text-transform: uppercase;
+          h4 {
+            font-size: 1.6rem;
+            font-weight: 900;
+          }
+
+          .payment-card {
+            display: flex;
+
+            li {
+              margin-right: 10px;
+            }
+          }
+        }
+
+        // le style de newsletter lorsqu'il se trouve dans le footer
+        .newsletter {
+          width: 100%;
+          height: max-content;
+          background: none;
+          .newsletter-ctn {
+            padding: 0;
+            form {
+              display: block;
+              margin: 0;
+
+              p {
+                font-size: 1.8rem;
+                color: $black;
+              }
+
+              input[type="email"],
+              input[type="submit"] {
+                margin: 0;
+              }
+
+              input[type="email"] {
+                width: 100%;
+                background-color: rgb(217, 217, 217);
+                margin: 15px 0;
+              }
+
+              #checkbox {
+                display: block;
+                margin: 15px 0;
+
+                input[type="checkbox"] {
+                  padding: 5px;
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .Copy-right {
+    padding: 20px 0;
+    width: 100%;
+    background-color: $grey;
+  }
+}
