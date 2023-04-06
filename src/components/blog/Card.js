@@ -13,7 +13,7 @@ const Card = () => {
           />
         </div>
       </Link>
-      <Link className="infos">
+      <Link className="description">
         <h3 className="title">Lorem ipsum dolor sit.</h3>
         <p className="content">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio

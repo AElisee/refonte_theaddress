@@ -34,7 +34,9 @@
             }
           }
         }
-        .infos {
+
+        .description {
+          display: block;
           position: absolute;
           width: 280px;
           max-height: 180px;
@@ -49,13 +51,12 @@
           text-overflow: ellipsis;
 
           .title {
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
           }
 
           .content {
             color: $black-light;
             font-weight: 600;
-            // font-family: $main-font;
             font-size: 1.6rem;
             display: -webkit-box;
             -webkit-line-clamp: 3; /* nombre de lignes souhaité */

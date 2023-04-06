@@ -149,6 +149,17 @@ img {
     color: rgb(255, 255, 255);
   }
 }
+
+// letter spacing
+.ls {
+  &-1 {
+    letter-spacing: 1px;
+  }
+  &-2 {
+    letter-spacing: 2px;
+  }
+}
+
 //colors
 $black: black;
 $white: white;
@@ -235,4 +246,15 @@ $black-light: rgb(135, 133, 129);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.rounded {
+  border-radius: 200px;
+}
+
+// hide scrollBar
+.hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
