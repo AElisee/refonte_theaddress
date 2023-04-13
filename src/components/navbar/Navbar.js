@@ -21,13 +21,13 @@ const Navbar = () => {
                   A propos
                 </NavLink>
                 <NavLink
-                  to="/homme"
+                  to="boutique/homme"
                   className={(nav) => (nav.isActive ? "nav-active" : "")}
                 >
                   Homme
                 </NavLink>
                 <NavLink
-                  to="/femme"
+                  to="boutique/femme"
                   className={(nav) => (nav.isActive ? "nav-active" : "")}
                 >
                   Femme
@@ -37,6 +37,7 @@ const Navbar = () => {
               <li></li>
             </ul>
           </div>
+          <div className="categories-links">catégories links</div>
           <div className="right flex align-center">
             <select name="lang" id="lang">
               <option value="français">Fr</option>

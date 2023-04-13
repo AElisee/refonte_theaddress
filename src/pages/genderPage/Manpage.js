@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import Card from "../../components/productCard/Card";
+import ManBlog from "../../components/blog/ManBlog";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchAsyncProducts,
+  getAllProducts,
+  getAllProductsStatus,
+} from "../../redux/feature/productSlice";
 
 const Manpage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAsyncProducts({ category: "mens-shirts", limit: 10 }));
+  }, []);
+
+  const products = useSelector(getAllProducts);
+  const productsStatus = useSelector(getAllProductsStatus);
+
+  const slideImages = [" ", " ", " "];
+
   const settings = {
     dots: true,
     infinite: true,
@@ -12,37 +30,36 @@ const Manpage = () => {
     slidesToScroll: 1,
   };
 
-  // tableau de test
-  const productList = ["", "", "", "", "", ""];
-  // const slideImages = [
-  //   "https://cdn.pixabay.com/photo/2023/03/21/15/41/umbrella-7867543_960_720.jpg",
-  //   "https://cdn.pixabay.com/photo/2023/03/21/15/41/umbrella-7867543_960_720.jpg",
-  //   "https://cdn.pixabay.com/photo/2023/03/21/15/41/umbrella-7867543_960_720.jpg",
-  // ];
-  const slideImages = [" ", " ", " "];
-
-  console.log(slideImages);
   return (
     <div className="man-page gender">
       <section className="slide-carousel">
-        <div className="slide-carousel-ctn w-100 h-100">
-          <Slider {...settings}>
-            {slideImages.map((image, index) => (
-              <div className="img-ctn" key={index}>
-                <img src={image} alt="" className="w-100 h-100" />
-                <span className="btn ">
-                  <Link to="/" className="text-uppercase ls-2">
-                    Acheter maintenant
-                  </Link>
-                </span>
-              </div>
-            ))}
-          </Slider>
-        </div>
+        {/* <Slider {...settings}>
+          <div>
+            <img
+              src="https://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_960_720.jpg"
+              alt="slide 1"
+            />
+            <h2>Lorem ipsum dolor sit.</h2>
+            <Link to={`/`} className="">
+              Acheter maintenant
+            </Link>
+          </div>
+          <div>
+            <img
+              src="https://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_960_720.jpg"
+              alt="slide 1"
+            />
+            <h2>Lorem ipsum dolor sit.</h2>
+            <Link to={`/`} className="">
+              Acheter maintenant
+            </Link>
+          </div>
+        </Slider> */}
       </section>
+
       <section className="pub">
         <div className="pub-ctn container ">
-          <div className="left flex flex-column justify-center align-center">
+          <div className="left flex flex-column align-center">
             <h3 className="text-uppercase">Univers fashion style</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
@@ -52,9 +69,13 @@ const Manpage = () => {
               praesentium consequatur aut.
             </p>
           </div>
-          <div className="right">
-            <div className="img-container">
-              <img src="" alt="" />
+          <div className="right h-100">
+            <div className="img-container w-100 h-100">
+              <img
+                src="https://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_960_720.jpg"
+                alt=""
+                className="w-100 h-100"
+              />
             </div>
           </div>
         </div>
@@ -75,8 +96,8 @@ const Manpage = () => {
           </div>
           <div className="product-list">
             <ul className="product-list-ctn flex no-wrap align-center hide-scrollbar">
-              {productList.map((prod) => (
-                <Card />
+              {products?.map((product) => (
+                <Card product={product} gender="homme" key={product.id} />
               ))}
             </ul>
           </div>
@@ -87,7 +108,7 @@ const Manpage = () => {
           <div className="img-container">
             <img
               className="h-100 w-100"
-              src="https://images.pexels.com/photos/852860/pexels-photo-852860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://cdn.pixabay.com/photo/2016/11/29/01/34/man-1866572_960_720.jpg"
               alt=""
             />
             <div className="img-title">
@@ -120,6 +141,7 @@ const Manpage = () => {
           </div>
         </div>
       </section>
+      <ManBlog />
     </div>
   );
 };

@@ -71,6 +71,9 @@ img {
   &-column {
     flex-direction: column;
   }
+  &-row {
+    flex-direction: row;
+  }
   &-wrap {
     flex-wrap: wrap;
   }
@@ -110,6 +113,27 @@ img {
 
 .grid {
   display: grid;
+}
+
+.gap {
+  &-10 {
+    gap: 1rem;
+  }
+  &-15 {
+    gap: 1.5rem;
+  }
+  &-20 {
+    gap: 2rem;
+  }
+  &-25 {
+    gap: 2.5rem;
+  }
+  &-30 {
+    gap: 3rem;
+  }
+  &-40 {
+    gap: 40rem;
+  }
 }
 
 /* height and width */

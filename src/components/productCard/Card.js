@@ -2,23 +2,26 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-const Card = () => {
+const Card = ({ product, gender }) => {
   const [isFavorite, setIsFavorite] = useState(false);
+
+  const encodeTitle = encodeURIComponent(product.title.replace(/ /g, "-"));
 
   const handleFavorite = () => {
     setIsFavorite((prev) => !prev);
   };
+
   return (
     <li className="card relative">
-      <Link>
+      <Link to={`/boutique/${gender}/${encodeTitle}/${product?.id}`}>
         <div className="img-container">
-          <img src={""} alt="" />
+          <img src={product?.thumbnail} alt="" />
         </div>
         <div className="details">
           <div className="product-name flex align-center">
-            <h5>title</h5>
+            <h5>{product?.title}</h5>
             <p id="sepator">-</p>
-            <p className="brand">Robe</p>
+            <p className="brand">{product?.brand}</p>
           </div>
 
           <div className="price flex">

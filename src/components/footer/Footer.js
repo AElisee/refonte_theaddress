@@ -13,19 +13,19 @@ const Footer = () => {
           <div className="top-section-container">
             <div className="top-section-item">
               <div className="icon">
-                <img src="./images/produits-auth.svg" alt="" />
+                <img src="/images/produits-auth.svg" alt="" />
               </div>
               <p>PRODUITS AUTHENTIQUES</p>
             </div>
             <div className="top-section-item">
               <div className="icon">
-                <img src="./images/paiement-secur.svg" alt="" />
+                <img src="/images/paiement-secur.svg" alt="" />
               </div>
               <p>PAIEMENT SÉCURISÉ</p>
             </div>
             <div className="top-section-item">
               <div className="icon">
-                <img src="./images/envoi-livraison.svg" alt="" />
+                <img src="/images/envoi-livraison.svg" alt="" />
               </div>
               <p>ENVOIE ET LIVRAISON À L'INTERNATIONAL</p>
             </div>

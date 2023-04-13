@@ -2,68 +2,79 @@
   max-width: 100vw;
   overflow: hidden;
 
-  .slide-carousel {
-    margin-bottom: 4rem;
-    height: 480px;
+  // .slide-carousel {
+  //   margin-bottom: 4rem;
+  //   height: 480px;
 
-    .slide-carousel-ctn {
-      .slick-slider {
+  //   .slide-carousel-ctn {
+  //     .slick-slider {
+  //       width: 100%;
+  //       height: 100%;
+  //       // background-color: rgb(121, 112, 112);
+  //       // overflow: hidden;
+
+  //       .img-ctn {
+  //         width: 100%;
+  //         height: 100%;
+
+  //         img {
+  //           display: block;
+  //           object-fit: cover;
+  //         }
+
+  //         .btn {
+  //           bottom: 50px;
+  //           left: 50px;
+  //           display: inline-block;
+  //           padding: 10px 20px;
+  //           background-color: $black;
+
+  //           a {
+  //             color: $white;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  .pub {
+    .pub-ctn {
+      width: 100%;
+      min-height: 600px;
+      height: 100%;
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      gap: 20px;
+      align-items: space-between;
+
+      .left {
         width: 100%;
-        height: 100%;
-        // background-color: rgb(121, 112, 112);
-        // overflow: hidden;
+        gap: 20px;
+        padding-top: 30px;
 
-        .img-ctn {
-          width: 100%;
+        h3 {
+          width: 70%;
+          margin: 0 auto;
+          font-size: 3.4rem;
+          text-align: center;
+        }
+
+        p {
+          font-size: 2rem;
+        }
+      }
+      .right {
+        width: 75%;
+
+        .img-container {
           height: 100%;
-
           img {
-            display: block;
             object-fit: cover;
-          }
-
-          .btn {
-            bottom: 50px;
-            left: 50px;
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: $black;
-
-            a {
-              color: $white;
-            }
           }
         }
       }
-    }
-  }
-
-  .pub-ctn {
-    width: 100%;
-    padding: 20px 0;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    gap: 10px;
-    align-items: space-between;
-
-    .left {
-      width: 100%;
-      gap: 20px;
-
-      h3 {
-        width: 70%;
-        margin: 0 auto;
-        font-size: 3.4rem;
-        text-align: center;
-      }
-
-      p {
-        font-size: 2rem;
-      }
-    }
-    .right {
-      border: 1px solid red;
-      width: 100%;
     }
   }
 

@@ -1,0 +1,89 @@
+// * {
+//   box-shadow: 0 0 3px red inset;
+// }
+
+.login {
+  padding: 4rem 0;
+  min-height: 100vh;
+  max-width: 100%;
+  background: url("./../../assets/images/bg.jpg") center/cover;
+
+  .login-ctn {
+    padding: 7rem 4rem;
+    padding-bottom: 2rem;
+    width: 45%;
+    background: $white;
+    margin: 0 auto;
+
+    .close-modal {
+      display: block;
+      width: 40px;
+      height: 40px;
+      top: 3rem;
+      right: 4rem;
+
+      #close-icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    form {
+      width: 90%;
+      margin: 0 auto;
+      .fields {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      input {
+        padding: 12px 20px;
+      }
+
+      input[type="submit"] {
+        color: $white;
+        font-size: 2rem;
+        margin: 1rem 0;
+        cursor: pointer;
+      }
+    }
+
+    .connect-with {
+      width: 85%;
+      margin: 0 auto;
+      padding: 1rem;
+
+      .connect-here {
+        text-decoration: underline;
+        font-size: 1.6rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .medias {
+        margin: 10px;
+        margin-top: 30px;
+        .with-fcb,
+        .with-email {
+          width: 40%;
+          padding: 10px;
+          border-radius: 30px;
+        }
+        .with-fcb {
+          background-color: rgb(3, 75, 158);
+        }
+        .with-email {
+          border: 2px solid rgb(245, 94, 94);
+        }
+      }
+    }
+    .go-back {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}

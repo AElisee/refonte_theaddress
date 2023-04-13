@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import GradeIcon from "@mui/icons-material/Grade";
 const HomePage = () => {
+  const currentUrl = window.location.href;
+  if (currentUrl === "/") {
+    console.log("Vous êtes sur la page d'accueil !");
+  } else console.log("rien de trouvé");
+
   // tableau d'avis par defaut
   const satisfiedArray = ["", "", ""];
   return (
