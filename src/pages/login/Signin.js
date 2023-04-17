@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import Medias from "./Medias";
 import axios from "axios";
 import { SIGNIN_URL } from "../../utils/ApiUrl";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 const Signin = ({ setSignup, setSignin }) => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
 
   const handleClick = () => {
     setSignin((prev) => !prev);
@@ -29,10 +32,14 @@ const Signin = ({ setSignup, setSignin }) => {
         },
       })
       .then((res) => {
-        return JSON.parse(JSON.stringify(res.data));
-      })
-      .then((res) => {
-        console.log("mon log:", res);
+        // setIsLogin(true);
+        const jsonData = JSON.parse(JSON.stringify(res.data.token));
+        console.log(jsonData);
+        cookies.set("TOKEN", res.data.token, {
+          path: "/",
+        });
+        // // redirect user to the auth page
+        window.location.href = "/";
       })
       .catch((err) => console.log(err));
   };

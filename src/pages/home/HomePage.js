@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import GradeIcon from "@mui/icons-material/Grade";
 import Navbar from "../../components/navbar/Navbar";
 import NewsLetter from "../../components/newsletter/Newsletter";
 import Footer from "../../components/footer/Footer";
+
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+
 const HomePage = () => {
-  const currentUrl = window.location.href;
-  if (currentUrl === "/") {
-    console.log("Vous êtes sur la page d'accueil !");
-  } else console.log("rien de trouvé");
+  const [cookieValue, setCookieValue] = useState("");
+
+  useEffect(() => {
+    const cookie = cookies.get("TOKEN");
+    setCookieValue(cookie || "");
+    console.log("cookieValue", cookieValue);
+  }, [cookieValue]);
 
   // tableau d'avis par defaut
   const satisfiedArray = ["", "", ""];

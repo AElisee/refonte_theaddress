@@ -8,6 +8,7 @@ import {
 } from "../../redux/feature/productSlice";
 import Loader from "../loader/Loader";
 import { STATUS } from "../../utils/status";
+import Navbar from "../navbar/Navbar";
 
 const SingleProduct = () => {
   const [mainImage, setMainImage] = useState("");
@@ -25,6 +26,7 @@ const SingleProduct = () => {
 
   return (
     <div className="single-product">
+      <Navbar />
       <div className="single-product-ctn container">
         {productSingleStatus === STATUS.LOADING ? (
           <Loader />
