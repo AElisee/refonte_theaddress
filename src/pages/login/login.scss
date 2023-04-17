@@ -8,6 +8,11 @@
   max-width: 100%;
   background: url("./../../assets/images/bg.jpg") center/cover;
 
+  .welcome-txt {
+    padding: 2rem 0;
+    font-size: 2.5rem;
+  }
+
   .login-ctn {
     padding: 7rem 4rem;
     padding-bottom: 2rem;
@@ -28,6 +33,38 @@
       }
     }
 
+    .signin {
+      .logo-ctn {
+        margin: 20px 0 30px;
+        img {
+          width: 75px;
+          height: 75px;
+        }
+      }
+
+      .link-to-signup {
+        padding: 1.5rem 0;
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: 50% 50%;
+        font-size: 1.7rem;
+
+        .signup-link {
+          cursor: pointer;
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      .forgot-pwd {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $black-light;
+      }
+    }
+
     form {
       width: 90%;
       margin: 0 auto;
@@ -38,13 +75,58 @@
 
       input {
         padding: 12px 20px;
+        width: 100%;
+      }
+
+      input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+        padding: 0;
       }
 
       input[type="submit"] {
         color: $white;
-        font-size: 2rem;
+        font-size: 2.2rem;
         margin: 1rem 0;
         cursor: pointer;
+      }
+
+      .sex-ctn {
+        font-size: 2rem;
+        input[type="radio"] {
+          transform: scale(1.5);
+          margin: 0 5px;
+        }
+      }
+      .accept-cdt {
+        input[type="checkbox"] {
+          transform: scale(1.7);
+        }
+        label {
+          font-size: 1.4rem;
+        }
+      }
+      .formMessage {
+        padding: 2rem 0;
+        transform: translateY(-50%);
+        transition: 2s ease-in-out;
+        background-color: antiquewhite;
+        height: 200px;
+      }
+    }
+
+    .formMessage {
+      .success {
+        width: 100%;
+        color: rgb(2, 112, 2);
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .error {
+        color: red;
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: center;
       }
     }
 
@@ -63,22 +145,15 @@
           text-decoration: none;
         }
       }
-
-      .medias {
-        margin: 10px;
-        margin-top: 30px;
-        .with-fcb,
-        .with-email {
-          width: 40%;
-          padding: 10px;
-          border-radius: 30px;
-        }
-        .with-fcb {
-          background-color: rgb(3, 75, 158);
-        }
-        .with-email {
-          border: 2px solid rgb(245, 94, 94);
-        }
+    }
+    .medias {
+      margin: 10px;
+      margin-top: 30px;
+      .with-fcb,
+      .with-email {
+        width: 40%;
+        padding: 10px;
+        border-radius: 30px;
       }
     }
     .go-back {

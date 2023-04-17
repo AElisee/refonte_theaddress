@@ -8,6 +8,9 @@ import {
   getAllProducts,
   getAllProductsStatus,
 } from "../../redux/feature/productSlice";
+import Navbar from "../../components/navbar/Navbar";
+import NewsLetter from "../../components/newsletter/Newsletter";
+import Footer from "../../components/footer/Footer";
 
 const Manpage = () => {
   const dispatch = useDispatch();
@@ -31,6 +34,7 @@ const Manpage = () => {
 
   return (
     <div className="woman-page gender">
+      <Navbar />
       {/* <section className="slide-carousel">
         <div className="slide-carousel-ctn w-100 h-100">
           <Slider {...settings}>
@@ -132,6 +136,8 @@ const Manpage = () => {
           </div>
         </div>
       </section>
+      <NewsLetter />
+      <Footer />
     </div>
   );
 };

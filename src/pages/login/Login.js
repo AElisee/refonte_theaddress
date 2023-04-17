@@ -5,8 +5,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [signup, setSignup] = useState(true);
-  const [signin, setSignin] = useState(false);
+  const [signup, setSignup] = useState(false);
+  const [signin, setSignin] = useState(true);
 
   return (
     <div className="login">
@@ -17,8 +17,8 @@ const Login = () => {
         >
           <CloseIcon id="close-icon" />
         </Link>
-        {signin && <Signin />}
-        {signup && <Signup />}
+        {signin && <Signin setSignin={setSignin} setSignup={setSignup} />}
+        {signup && <Signup setSignin={setSignin} setSignup={setSignup} />}
       </div>
     </div>
   );

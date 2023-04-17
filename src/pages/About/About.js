@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../../components/navbar/Navbar";
 
 const About = () => {
   return (
     <div className="about">
+      <Navbar />
       <div className="container">
         <div className="top">
           <div className="img-part">

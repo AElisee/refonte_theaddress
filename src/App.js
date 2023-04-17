@@ -11,11 +11,12 @@ import WomanPage from "./pages/genderPage/WomanPage";
 import NewsLetter from "./components/newsletter/Newsletter";
 import Login from "./pages/login/Login";
 import SingleProduct from "./components/singleProduct/SingleProduct";
+import Confirmation from "./pages/login/Confirmation";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         {/* <Route
           path={["/", "/a-propos", "/homme", "/femme"]}
@@ -28,14 +29,15 @@ const App = () => {
         /> */}
         <Route path="/" element={<HomePage />} />
         <Route path="/a-propos" element={<About />} />
-        <Route path="boutique/homme" element={<Manpage />} />
-        <Route path="boutique/femme" element={<WomanPage />} />
+        <Route path="/boutique/homme" element={<Manpage />} />
+        <Route path="/boutique/femme" element={<WomanPage />} />
         <Route path="boutique/homme/:nom/:id" element={<SingleProduct />} />
         <Route path="boutique/femme/:nom/:id" element={<SingleProduct />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/login/confirmation/:token" element={<Confirmation />} />
       </Routes>
-      <NewsLetter />
-      <Footer />
+      {/* <NewsLetter />
+      <Footer /> */}
     </BrowserRouter>
   );
 };

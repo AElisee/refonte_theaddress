@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import GradeIcon from "@mui/icons-material/Grade";
+import Navbar from "../../components/navbar/Navbar";
+import NewsLetter from "../../components/newsletter/Newsletter";
+import Footer from "../../components/footer/Footer";
 const HomePage = () => {
   const currentUrl = window.location.href;
   if (currentUrl === "/") {
@@ -11,6 +14,7 @@ const HomePage = () => {
   const satisfiedArray = ["", "", ""];
   return (
     <div className="home-page">
+      <Navbar />
       <section className="man-woman container">
         <h3 className="text-center font-didot">faîtes votre choix</h3>
         <div className="choise-ctn">
@@ -69,6 +73,8 @@ const HomePage = () => {
           ))}
         </ul>
       </section>
+      <NewsLetter />
+      <Footer />
     </div>
   );
 };
