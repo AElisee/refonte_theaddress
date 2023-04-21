@@ -37,28 +37,11 @@ const Manpage = () => {
     <div className="man-page gender">
       <Navbar />
       <section className="slide-carousel">
-        {/* <Slider {...settings}>
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_960_720.jpg"
-              alt="slide 1"
-            />
-            <h2>Lorem ipsum dolor sit.</h2>
-            <Link to={`/`} className="">
-              Acheter maintenant
-            </Link>
-          </div>
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_960_720.jpg"
-              alt="slide 1"
-            />
-            <h2>Lorem ipsum dolor sit.</h2>
-            <Link to={`/`} className="">
-              Acheter maintenant
-            </Link>
-          </div>
-        </Slider> */}
+        <span
+          style={{ display: "block", padding: "250px 0", textAlign: "center" }}
+        >
+          SLIDER ICI
+        </span>
       </section>
 
       <section className="pub">

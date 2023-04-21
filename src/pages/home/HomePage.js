@@ -4,6 +4,7 @@ import GradeIcon from "@mui/icons-material/Grade";
 import Navbar from "../../components/navbar/Navbar";
 import NewsLetter from "../../components/newsletter/Newsletter";
 import Footer from "../../components/footer/Footer";
+import FaceIcon from "@mui/icons-material/Face";
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
@@ -27,22 +28,24 @@ const HomePage = () => {
         <div className="choise-ctn">
           <div className="man-ctn w-100 relative">
             <div className="img-container">
-              <img src="" alt="" />
-              <Link
-                to={"/homme"}
-                className="link bg-black-light absolute absolute-center"
-              >
+              <img
+                src="https://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_960_720.jpg"
+                alt=""
+                className="w-100 h-100"
+              />
+              <Link to={"/homme"} className="link   absolute absolute-center">
                 Homme
               </Link>
             </div>
           </div>
           <div className="woman-ctn w-100 relative">
             <div className="img-container">
-              <img src="" alt="" />
-              <Link
-                to={"/femme"}
-                className="link bg-black-light absolute absolute-center"
-              >
+              <img
+                src="https://cdn.pixabay.com/photo/2017/05/13/12/40/fashion-2309519_960_720.jpg"
+                alt=""
+                className="w-100 h-100"
+              />
+              <Link to={"/femme"} className="link   absolute absolute-center">
                 Femme
               </Link>
             </div>
@@ -55,8 +58,8 @@ const HomePage = () => {
           {satisfiedArray.map((el, index) => (
             <li key={index} className="msg flex flex-column justify-center">
               <div className="user flex">
-                <div className="avatar rounded">
-                  <img src="" alt="" />
+                <div className="avatar rounded flex align-center justify-center">
+                  <FaceIcon className="face-icon" />
                 </div>
                 <div className="pseudo-grade">
                   <h4>Lorem, ipsum dolor.</h4>

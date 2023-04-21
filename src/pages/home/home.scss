@@ -20,7 +20,16 @@
       .woman-ctn {
         // background-color: aqua;
         height: 400px;
-        border: 1px solid red;
+        .img-container {
+          overflow: hidden;
+          img {
+            object-fit: center;
+          }
+
+          a {
+            background-color: rgba(0, 0, 0, 0.443);
+          }
+        }
 
         .link {
           width: 250px;
@@ -60,7 +69,11 @@
           .avatar {
             width: 50px;
             height: 50px;
-            border: 1px solid red;
+
+            .face-icon {
+              width: 40px;
+              height: 40px;
+            }
 
             img {
               object-fit: center;

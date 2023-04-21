@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { BASE_URL } from "./../../utils/ApiUrl";
+import { DUMMYAPI_URL } from "./../../utils/ApiUrl";
 import { STATUS } from "./../../utils/status";
 
 const initialState = {
@@ -48,7 +48,7 @@ export const fetchAsyncProducts = createAsyncThunk(
   "products/fetch",
   async ({ category, limit }) => {
     const response = await fetch(
-      `${BASE_URL}products/category/${category}?limit=${limit}`
+      `${DUMMYAPI_URL}products/category/${category}?limit=${limit}`
     );
     const data = await response.json();
     return data.products;
@@ -59,7 +59,7 @@ export const fetchAsyncProducts = createAsyncThunk(
 export const fetchAsyncProductSingle = createAsyncThunk(
   "product-single/fetch",
   async (id) => {
-    const response = await fetch(`${BASE_URL}products/${id}`);
+    const response = await fetch(`${DUMMYAPI_URL}products/${id}`);
     const data = await response.json();
     return data;
   }

@@ -53,14 +53,14 @@
       .text-container {
         display: flex;
         flex-direction: column;
-        gap: 1.4rem;
+        gap: 1.8rem;
 
         > div:nth-child(1) {
           display: flex;
           justify-content: space-between;
 
           .name-container {
-            padding-bottom: 20px;
+            padding-bottom: 10px;
 
             #product-name {
               text-transform: uppercase;
@@ -89,16 +89,15 @@
           .price-container {
             padding-bottom: 10px;
             display: flex;
+            font-weight: 600;
             p {
               margin-right: 20px;
-              font-size: 1.1rem;
-              color: red;
-              font-weight: 500;
+              font-size: 2rem;
             }
-            p:nth-child(2) {
-              text-decoration: line-through;
-              color: #93929272;
-            }
+            // p:nth-child(2) {
+            //   text-decoration: line-through;
+            //   color: #93929272;
+            // }
           }
 
           .size-container {
@@ -160,15 +159,12 @@
             p {
               padding: 10px 0;
             }
-            #qty-btn-like {
-              display: flex;
-              justify-content: space-around;
-
+            .qty-btn-like {
               button {
                 background: #000;
                 color: #fff;
-                font-size: 0.7rem;
-                padding: 5px 10px;
+                font-size: 1.7rem;
+                padding: 7px 10px;
                 cursor: pointer;
               }
 
@@ -191,7 +187,7 @@
                   outline: none;
                   border: none;
                   text-align: center;
-                  font-size: 1rem;
+                  font-size: 1.8rem;
                   font-weight: 700;
                 }
               }

@@ -18,6 +18,7 @@ const Signup = ({ setSignup, setSignin }) => {
   const [confirmPwd, setConfirmPwd] = useState("");
   const [acceptCondition, setAcceptCondition] = useState(false);
   const form = useRef();
+  const [submited, setSubmited] = useState(false);
 
   const handleClick = () => {
     setSignin((prev) => !prev);
@@ -27,17 +28,21 @@ const Signup = ({ setSignup, setSignin }) => {
   // soumission du formulaire
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmited(true);
     const formMes = document.querySelector(".formMessage");
+    formMes.innerHTML = "";
 
     if (password !== confirmPwd) {
-      formMes.innerHTML = `<div className="form-error">
+      setSubmited(false);
+      formMes.innerHTML = `<div class="error">
           <p>Les mots de passe ne correspondent pas.</p>
         </div>`;
 
       return;
     }
     if (!acceptCondition) {
-      formMes.innerHTML = `<div className="form-error">
+      setSubmited(false);
+      formMes.innerHTML = `<div class="error">
           <p>Veuillez accepter les conditions générales.</p>
         </div>`;
       return;
@@ -68,6 +73,7 @@ const Signup = ({ setSignup, setSignin }) => {
           setPassword("");
           setConfirmPwd("");
           setAcceptCondition("");
+          setSubmited(false);
 
           formMes.innerHTML = `<div class="success">
           <p>Votre inscription a été enregistrée avec succès !</p>
@@ -78,9 +84,15 @@ const Signup = ({ setSignup, setSignin }) => {
           }, 3000);
         })
         .catch((err) => {
+          setSubmited(false);
+          formMes.innerHTML = `<div class="error">
+          <p>Une erreur s'est produite lors de l'inscription.</p>
+        </div>`;
+
           console.log(err);
         });
     } else {
+      setSubmited(false);
       formMes.innerHTML = `<div class="error">
           <p>Veuillez remplir tous les champs.</p>
         </div>`;
@@ -168,11 +180,17 @@ const Signup = ({ setSignup, setSignin }) => {
               </label>
             </div>
           </div>
-          <input
-            type="submit"
-            value="OUVRIR LE COMPTE"
-            className="w-100 bg-black"
-          />
+          <div className="submit flex align-center justify-center">
+            {!submited ? (
+              <input
+                type="submit"
+                value="OUVRIR LE COMPTE"
+                className="w-100 bg-black"
+              />
+            ) : (
+              <img src="/icons/loader.svg" alt="" />
+            )}
+          </div>
         </form>
         <div className="formMessage flex align-center justify-center"></div>
         <div className="connect-with">

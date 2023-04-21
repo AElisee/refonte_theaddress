@@ -49,9 +49,10 @@ const Navbar = () => {
               <option value="euro">Euro</option>
               <option value="fcfa">XOF</option>
             </select>
-            <div className="cart-icon">
-              <LocalMallOutlinedIcon className="icon" /> <span>1</span>
-            </div>
+            <Link to="/panier" className="cart-icon">
+              <LocalMallOutlinedIcon className="icon" />
+              {/* <span>1</span> */}
+            </Link>
           </div>
         </div>
       </div>

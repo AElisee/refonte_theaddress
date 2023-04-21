@@ -35,22 +35,13 @@ const Manpage = () => {
   return (
     <div className="woman-page gender">
       <Navbar />
-      {/* <section className="slide-carousel">
-        <div className="slide-carousel-ctn w-100 h-100">
-          <Slider {...settings}>
-            {slideImages.map((image, index) => (
-              <div className="img-ctn" key={index}>
-                <img src={image} alt="" className="w-100 h-100" />
-                <span className="btn ">
-                  <Link to="/" className="text-uppercase ls-2">
-                    Acheter maintenant
-                  </Link>
-                </span>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </section> */}
+      <section className="slide-carousel">
+        <span
+          style={{ display: "block", padding: "250px 0", textAlign: "center" }}
+        >
+          SLIDER ICI
+        </span>
+      </section>
       <section className="pub">
         <div className="pub-ctn container ">
           <div className="left flex flex-column align-center">

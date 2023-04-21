@@ -6,10 +6,10 @@ import { SIGNIN_URL } from "../../utils/ApiUrl";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
-const Signin = ({ setSignup, setSignin }) => {
+const Signin = ({ setSignup, setSignin, setForgotPwd }) => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleClick = () => {
     setSignin((prev) => !prev);
@@ -34,10 +34,11 @@ const Signin = ({ setSignup, setSignin }) => {
       .then((res) => {
         // setIsLogin(true);
         const jsonData = JSON.parse(JSON.stringify(res.data.token));
-        console.log(jsonData);
+        // console.log(jsonData);
         cookies.set("TOKEN", res.data.token, {
           path: "/",
         });
+        setIsLoggedIn(true);
         // // redirect user to the auth page
         window.location.href = "/";
       })
@@ -70,7 +71,14 @@ const Signin = ({ setSignup, setSignin }) => {
               </label>
             </div>
             <div className="forgot-pwd">
-              <Link>Mot de passe oublié ?</Link>
+              <Link
+                onClick={() => {
+                  setForgotPwd((prev) => !prev);
+                  setSignin((prev) => !prev);
+                }}
+              >
+                Mot de passe oublié ?
+              </Link>
             </div>
           </div>
           <Medias />

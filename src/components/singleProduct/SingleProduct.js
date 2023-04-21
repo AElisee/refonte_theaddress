@@ -9,6 +9,9 @@ import {
 import Loader from "../loader/Loader";
 import { STATUS } from "../../utils/status";
 import Navbar from "../navbar/Navbar";
+import { PriceInFca, oldPrcie } from "../../utils/feature";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const SingleProduct = () => {
   const [mainImage, setMainImage] = useState("");
@@ -23,6 +26,26 @@ const SingleProduct = () => {
   useEffect(() => {
     dispatch(fetchAsyncProductSingle(id));
   }, [id]);
+
+  // reduire la quantité
+  const increaseQty = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  // augmenter la quantité
+  const decreaseQty = () => {
+    setQuantity(quantity + 1);
+  };
+
+  //ajouter un produit au panier
+  const addToCart = () => {
+    const item = {
+      quantity: quantity,
+    };
+    console.log(item);
+  };
 
   return (
     <div className="single-product">
@@ -67,11 +90,11 @@ const SingleProduct = () => {
               </div>
               <div>
                 <div className="price-container">
-                  {/* <p>
-                    {PriceInFca(parseInt(product?.price))}
+                  <p>
+                    {PriceInFca(parseInt(product?.price).toLocaleString())}
                     <span> FCFA</span>
                   </p>
-                  <p>
+                  {/* <p>
                     {oldPrcie(product?.price)}
                     <span>FCFA</span>
                   </p> */}
@@ -89,23 +112,23 @@ const SingleProduct = () => {
                 </div>
                 <div className="qty-btn-like-container">
                   <p>Quantité :</p>
-                  <div id="qty-btn-like">
+                  <div className="qty-btn-like flex gap-20">
                     <div className="quantity-selector">
                       <span>
-                        {/* <RemoveIcon
+                        <RemoveIcon
                           onClick={increaseQty}
                           style={{ fontSize: 18 }}
-                        /> */}
+                        />
                       </span>
-                      {/* <input value={quantity} readOnly /> */}
+                      <input value={quantity} readOnly />
                       <span>
-                        {/* <AddIcon
+                        <AddIcon
                           onClick={decreaseQty}
                           style={{ fontSize: 18 }}
-                        /> */}
+                        />
                       </span>
                     </div>
-                    <button>AJOUTER UN PANIER</button>
+                    <button onClick={addToCart}>Ajouter au panier</button>
                     {/* <div id="like">{quantity > 1 ? <Like /> : <DisLike />}</div> */}
                   </div>
                 </div>
