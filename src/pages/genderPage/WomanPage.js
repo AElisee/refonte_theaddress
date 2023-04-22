@@ -11,6 +11,9 @@ import {
 import Navbar from "../../components/navbar/Navbar";
 import NewsLetter from "../../components/newsletter/Newsletter";
 import Footer from "../../components/footer/Footer";
+import WomanpageSlider from "../../components/slider/WomanpageSlider";
+import PrevArrow from "../../components/slider/PrevArrow";
+import NextArrow from "../../components/slider/NextArrow";
 
 const Manpage = () => {
   const dispatch = useDispatch();
@@ -22,26 +25,12 @@ const Manpage = () => {
   const products = useSelector(getAllProducts);
   const productsStatus = useSelector(getAllProductsStatus);
 
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
-
   // const slideImages = [" ", " ", " "];
 
   return (
     <div className="woman-page gender">
       <Navbar />
-      <section className="slide-carousel">
-        <span
-          style={{ display: "block", padding: "250px 0", textAlign: "center" }}
-        >
-          SLIDER ICI
-        </span>
-      </section>
+      <WomanpageSlider />
       <section className="pub">
         <div className="pub-ctn container ">
           <div className="left flex flex-column align-center">

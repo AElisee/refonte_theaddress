@@ -12,6 +12,7 @@ import {
 import Navbar from "../../components/navbar/Navbar";
 import NewsLetter from "../../components/newsletter/Newsletter";
 import Footer from "../../components/footer/Footer";
+import ManpageSlider from "../../components/slider/ManpageSlider";
 
 const Manpage = () => {
   const dispatch = useDispatch();
@@ -36,14 +37,7 @@ const Manpage = () => {
   return (
     <div className="man-page gender">
       <Navbar />
-      <section className="slide-carousel">
-        <span
-          style={{ display: "block", padding: "250px 0", textAlign: "center" }}
-        >
-          SLIDER ICI
-        </span>
-      </section>
-
+      <ManpageSlider />
       <section className="pub">
         <div className="pub-ctn container ">
           <div className="left flex flex-column align-center">
