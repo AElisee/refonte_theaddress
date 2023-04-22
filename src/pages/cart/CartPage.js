@@ -6,7 +6,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import NearMeIcon from "@mui/icons-material/NearMe";
 
 const CartPage = () => {
-  // ceci est un exemple pour test
+  // ceci est un exemple de tableau pour le test
   const [cartItem, setcartItem] = useState([]);
   console.log(cartItem.length);
 

@@ -12,6 +12,7 @@ import Navbar from "../navbar/Navbar";
 import { PriceInFca, oldPrcie } from "../../utils/feature";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { addToCart } from "../../redux/feature/CartSlice";
 
 const SingleProduct = () => {
   const [mainImage, setMainImage] = useState("");
@@ -40,11 +41,8 @@ const SingleProduct = () => {
   };
 
   //ajouter un produit au panier
-  const addToCart = () => {
-    const item = {
-      quantity: quantity,
-    };
-    console.log(item);
+  const addToCartHandler = (product) => {
+    dispatch(addToCart({ ...product, quantity: quantity }));
   };
 
   return (
@@ -128,7 +126,9 @@ const SingleProduct = () => {
                         />
                       </span>
                     </div>
-                    <button onClick={addToCart}>Ajouter au panier</button>
+                    <button onClick={() => addToCartHandler(product)}>
+                      Ajouter au panier
+                    </button>
                     {/* <div id="like">{quantity > 1 ? <Like /> : <DisLike />}</div> */}
                   </div>
                 </div>
