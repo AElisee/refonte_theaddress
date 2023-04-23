@@ -4,8 +4,11 @@ import Logo from "../logo/Logo";
 import { Link, NavLink } from "react-router-dom";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import { useSelector } from "react-redux";
+import { getAllCarts } from "../../redux/feature/CartSlice";
 
 const Navbar = () => {
+  const carts = useSelector(getAllCarts);
   return (
     <div className="navbar shadow-light">
       <div className="container">
@@ -51,7 +54,7 @@ const Navbar = () => {
             </select>
             <Link to="/panier" className="cart-icon">
               <LocalMallOutlinedIcon className="icon" />
-              {/* <span>1</span> */}
+              <span>{carts.length}</span>
             </Link>
           </div>
         </div>

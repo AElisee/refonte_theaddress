@@ -4,17 +4,20 @@ import Footer from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
 import ClearIcon from "@mui/icons-material/Clear";
 import NearMeIcon from "@mui/icons-material/NearMe";
+import { getAllCarts, removeFromCart } from "../../redux/feature/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { PriceInFca } from "../../utils/feature";
 
 const CartPage = () => {
-  // ceci est un exemple de tableau pour le test
-  const [cartItem, setcartItem] = useState([]);
-  console.log(cartItem.length);
+  const carts = useSelector(getAllCarts);
+  const dispatch = useDispatch();
+  console.log("carts", carts);
 
   return (
     <div className="cart-page">
       <Navbar />
       <div className="cart-ctn">
-        {cartItem.length === 0 ? (
+        {carts.length === 0 ? (
           <div className="empty-cart flex align-center justify-center w-100">
             <div className="container ">
               <span className="empty-msg text-center">
@@ -62,43 +65,48 @@ const CartPage = () => {
               </div>
             </div>
 
-            <div className="cart-body">
-              <div className="cart-ctr">
-                <div className="cart-ctd">
-                  <div className="product flex gap-30">
-                    <span className="thumbnail rounded">
-                      <img src="" alt="" />
-                    </span>
-                    <div className="product-desc grid">
-                      <p className="desc">Lorem ipsum dolor sit amet.</p>
-                      <p className="ref">SDID884</p>
+            {carts.map((item) => {
+              return (
+                <div className="cart-body">
+                  <div className="cart-ctr">
+                    <div className="cart-ctd">
+                      <div className="product flex gap-30">
+                        <span className="thumbnail rounded">
+                          <img src={item.thumbnail} alt="" />
+                        </span>
+                        <div className="product-desc grid">
+                          <p className="desc">{item.title}</p>
+                          <p className="ref">{Date.now()}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="cart-ctd ">
+                      <span className="cart-ctxt">blue</span>
+                    </div>
+                    <div className="cart-ctd">
+                      <span className="cart-ctxt">M</span>
+                    </div>
+                    <div className="cart-ctd">
+                      <span className="cart-ctxt">{item.quantity}</span>
+                    </div>
+                    <div className="cart-ctd">
+                      <span className="cart-ctxt">
+                        {/* {item.price * item.quantity} */}
+                        {PriceInFca(parseInt(item?.price).toLocaleString())}
+                      </span>
+                    </div>
+                    <div className="cart-ctd">
+                      <span className="cart-ctxt flex align-center justify-end">
+                        <ClearIcon
+                          className="clear-icon"
+                          onClick={() => dispatch(removeFromCart(item?.id))}
+                        />
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="cart-ctd ">
-                  <span className="cart-ctxt">blue</span>
-                </div>
-                <div className="cart-ctd">
-                  <span className="cart-ctxt">M</span>
-                </div>
-                <div className="cart-ctd">
-                  <span className="cart-ctxt">Qauntité</span>
-                </div>
-                <div className="cart-ctd">
-                  <span className="cart-ctxt">47 450 Fcfa</span>
-                </div>
-                <div className="cart-ctd">
-                  <span className="cart-ctxt flex align-center justify-end">
-                    <ClearIcon
-                      className="clear-icon"
-                      onClick={() =>
-                        console.log("supprimer le produit du panier")
-                      }
-                    />
-                  </span>
-                </div>
-              </div>
-            </div>
+              );
+            })}
 
             <div className="cart-footer w-100">
               <div className="cart-footer-ctn grid ">
